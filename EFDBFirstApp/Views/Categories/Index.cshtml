@@ -1,0 +1,25 @@
+﻿@model IEnumerable<EFDBFirstApp.Models.Category>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+@{
+    ViewBag.Title = "Categories List";
+}
+
+<h2>Categories List</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Category Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@category.CategoryName</td>
+            </tr>
+        }
+    </tbody>
+</table>
