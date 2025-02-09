@@ -10,7 +10,7 @@
             <div class="card shadow-lg p-4">
                 <h2 class="text-center mb-4">Add Product</h2>
 
-                @using (Html.BeginForm(new { @class = "needs-validation" }))
+                @using (Html.BeginForm("Create", "Products", FormMethod.Post, new { enctype = "multipart/form-data", @class = "needs-validation" }))
                 {
                     @Html.AntiForgeryToken()
 
@@ -32,6 +32,11 @@
                     <div class="mb-3">
                         <label class="form-label">Brand</label>
                         @Html.DropDownList("BrandID", null, "Select Brand", new { @class = "form-select" })
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Upload Image</label>
+                        <input type="file" name="ProductImage" class="form-control" accept="image/*" />
                     </div>
 
                     <button type="submit" class="btn btn-primary w-100">Save</button>

@@ -10,7 +10,7 @@
             <div class="card shadow-lg p-4">
                 <h2 class="text-center mb-4">Edit Product</h2>
 
-                @using (Html.BeginForm())
+                @using (Html.BeginForm("Edit", "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
                     @Html.AntiForgeryToken()
                     @Html.HiddenFor(model => model.ProductID)
@@ -33,6 +33,25 @@
                     <div class="mb-3">
                         <label class="form-label">Brand</label>
                         @Html.DropDownList("BrandID", null, new { @class = "form-select" })
+                    </div>
+
+                    <!-- Image Preview -->
+                    <div class="mb-3 text-center">
+                        <label class="form-label d-block">Current Image</label>
+                        @if (!string.IsNullOrEmpty(Model.ImagePath))
+                        {
+                            <img src="@Url.Content(Model.ImagePath)" alt="Product Image" class="img-thumbnail" width="100" height="100" />
+                        }
+                        else
+                        {
+                            <p>No Image Available</p>
+                        }
+                    </div>
+
+                    <!-- Upload New Image -->
+                    <div class="mb-3">
+                        <label class="form-label">Upload New Image</label>
+                        <input type="file" name="ProductImage" class="form-control">
                     </div>
 
                     <div class="text-center">

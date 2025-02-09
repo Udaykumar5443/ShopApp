@@ -261,12 +261,13 @@
     <Content Include="Views\Auth\Login.cshtml" />
     <Content Include="Views\Brands\Index.cshtml" />
     <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
     <Folder Include="Views\Brand\" />
     <Folder Include="Views\Product\" />
-    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -31,6 +31,7 @@
           <Property Name="CategoryID" Type="bigint" />
           <Property Name="BrandID" Type="bigint" />
           <Property Name="Active" Type="bit" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="UsersProduct">
           <Key>
@@ -112,6 +113,7 @@
           <Property Name="Active" Type="Boolean" />
           <NavigationProperty Name="Brand" Relationship="Self.FK__Products__BrandI__3C69FB99" FromRole="Products" ToRole="Brands" />
           <NavigationProperty Name="Category" Relationship="Self.FK__Products__Catego__3B75D760" FromRole="Products" ToRole="Categories" />
+          <Property Name="ImagePath" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK__Products__BrandI__3C69FB99">
           <End Role="Brands" Type="Self.Brand" Multiplicity="0..1" />
@@ -184,6 +186,7 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="EFDBFirstDatabaseModel.Product">
               <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="ProductName" ColumnName="ProductName" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
